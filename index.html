@@ -368,5 +368,25 @@
             renderItems();
         });
     </script>
+
+    <script type="text/javascript">
+        document.addEventListener('contextmenu', function(e) {
+            // Mencegah munculnya menu klik kanan
+            e.preventDefault(); 
+        });
+
+        document.onkeydown = function(e) {
+            // F12 key (123)
+            if (e.keyCode == 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I (developer tools)
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                e.preventDefault();
+                return false;
+            }
+        };
+    </script>
 </body>
 </html>
