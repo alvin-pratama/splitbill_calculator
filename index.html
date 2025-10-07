@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Split Bill</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <style>
         /* Custom styles for number input on mobile */
         input[type="number"]::-webkit-outer-spin-button,
@@ -24,6 +24,7 @@
             @apply px-4 py-2 whitespace-nowrap;
         }
     </style>
+    <script src="cdn.tailwindcss.com/3.4.17/main.js"></script>
 </head>
 <body class="bg-gray-100 px-2 md:px-8 lg:px-20 py-4 font-sans">
 
@@ -94,7 +95,7 @@
                     
                     <div class="flex justify-between items-center p-2 mt-1 bg-red-50 border border-red-300">
                         <span class="text-sm font-medium text-gray-700 w-1/3">Diskon (Rp):</span>
-                        <input type="number" id="diskon" value="0" class="w-1/2 text-right px-2 text-base border rounded-md focus:border-red-500" oninput="calculateSplit()">
+                        <input type="number" id="diskon" value="0" class="w-1/2 text-right px-2 text-base border outline-none focus:border-red-500" oninput="calculateSplit()">
                     </div>
                 </div>
 
@@ -220,13 +221,13 @@
                 <td class="table-data-cell text-left">
                     <input type="text" 
                         value="${cost.nama}" 
-                        class="w-full text-sm p-1 m-1 border-b border-transparent outline-none focus:bg-white"
+                        class="w-full text-sm p-1 m-1 border border-transparent outline-none focus:border-gray-300"
                         oninput="updateCostName(${cost.id}, this.value)">
                 </td>
                 <td class="table-data-cell text-right">
                     <input type="number" 
                         value="${cost.nominal}" 
-                        class="w-full text-right p-1 m-1 text-sm border-b border-transparent outline-none focus:bg-white"
+                        class="w-full text-right p-1 m-1 text-sm border border-transparent outline-none focus:border-gray-300"
                         oninput="updateCostNominal(${cost.id}, this.value)">
                 </td>
                 <td class="table-data-cell text-center">
@@ -293,13 +294,13 @@
                 <td class="table-data-cell text-left">
                     <input type="text" 
                         value="${item.nama}" 
-                        class="w-full text-sm p-1 m-1 border-b border-transparent outline-none focus:bg-white font-medium text-gray-700"
+                        class="w-full text-sm p-1 m-1 border border-transparent outline-none focus:border-gray-300 font-medium text-gray-700"
                         oninput="updateItemName(${item.id}, this.value)">
                 </td>
                 <td class="table-data-cell text-right">
                     <input type="number" 
                         value="${item.hargaAplikasi}" 
-                        class="w-full text-right p-1 m-1 text-sm border-b border-transparent outline-none focus:bg-white"
+                        class="w-full text-right p-1 m-1 text-sm border border-transparent outline-none focus:border-gray-300"
                         oninput="updateItemPrice(${item.id}, this.value)">
                 </td>
                 <td class="table-data-cell text-right font-semibold text-blue-700" id="final-${item.id}">
